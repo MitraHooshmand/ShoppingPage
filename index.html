@@ -3,11 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"  href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <title>Shopping Page</title>
   </head>
   <body>
-    <p>mitra</p>
+    <header><p>Shopping Page</p></header>
+    <main>
+      <div id="search">
+        <input
+          type="text"
+          placeholder="type to search product..."
+          id="search-input"
+        />
+        <div>
+          <button class="filter">All</button>
+          <button class="filter">Tech</button>
+          <button class="filter">Clothes</button>
+          <button class="filter">Health</button>
+        </div>
+        <div>
+          <input type="number" placeholder="search the price..." />
+          <button>search</button>
+        </div>
+      </div>
+      <!-- /////////////////// Cards -->
+      <div id="products">
+        <div class="product-item" data-category="tech">
+          <img src="./img/iphone.png" />
+          <p>Apple iphone14 Pro</p>
+          <span>$1400</span>
+        </div>
+        <div class="product-item" data-category="tech">
+          <img src="./img/airpods.png" />
+          <p>Apple airbods</p>
+          <span>$299</span>
+        </div>
+        <div class="product-item" data-category="tech">
+          <img src="./img/watch.png" />
+          <p>Apple watch</p>
+          <span>$399</span>
+        </div>
+        <div class="product-item" data-category="clothes">
+          <img src="./img/bag.png" />
+          <p>Bag</p>
+          <span>$139</span>
+        </div>
+        <div class="product-item" data-category="clothes">
+          <img src="./img/jacket.png" />
+          <p>Jacket</p>
+          <span>$169</span>
+        </div>
+        <div class="product-item" data-category="clothes">
+          <img src="./img/shoes.png" />
+          <p>Shoes</p>
+          <span>$199</span>
+        </div>
+        <div class="product-item" data-category="health">
+          <img src="./img/cream.png" />
+          <p> Face cream</p>
+          <span>$39</span>
+        </div>
+        <div class="product-item" data-category="health">
+          <img src="./img/shampoo.png" />
+          <p>Keratin Hair Care</p>
+          <span>$80</span>
+        </div>
+        <div class="product-item" data-category="health">
+          <img src="./img/vitamin.png" />
+          <p>Vitamine C</p>
+          <span>$39</span>
+        </div>
+      </div>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
