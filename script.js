@@ -1,5 +1,6 @@
 const allNodes = document.querySelectorAll(".product-item");
 const allButtons = document.querySelectorAll(".filter");
+const searchButton = document.querySelector(".search").querySelector("button");
 ////////////////////////////////////////// search by input
 document.getElementById("search-input").addEventListener("keyup", function (e) {
   const inputParam = e.target.value.toLowerCase().trim();
@@ -34,5 +35,21 @@ buttonsParents.addEventListener("click", (event) => {
       categoryKeyword === item.dataset.category
         ? (item.style.display = "block")
         : (item.style.display = "none");
+  });
+});
+////////////////////////////////////////////// search by number
+
+searchButton.addEventListener("click", function () {
+  const valueNum = +document.querySelector(".search").querySelector("input")
+    .value;
+  allNodes.forEach((product) => {
+    const productPrice = +product.children[2].innerText.substring(1);
+    if (!valueNum) {
+      product.style.display = "block";
+    } else {
+      valueNum === productPrice
+        ? (product.style.display = "block")
+        : (product.style.display = "none");
+    }
   });
 });
