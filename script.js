@@ -1,5 +1,5 @@
 const allNodes = document.querySelectorAll(".product-item");
-
+const allButtons = document.querySelectorAll(".filter");
 ////////////////////////////////////////// search by input
 document.getElementById("search-input").addEventListener("keyup", function (e) {
   const inputParam = e.target.value.toLowerCase().trim();
@@ -12,11 +12,21 @@ document.getElementById("search-input").addEventListener("keyup", function (e) {
     }
   });
 });
+
+///////////////////////////////////////// add class to the buttons
+const changeClass = function (catKeyword) {
+  allButtons.forEach((button) => {
+    button.dataset.filter === catKeyword
+      ? button.classList.add("selected")
+      : button.classList.remove("selected");
+  });
+};
 ////////////////////////////////////////// search by category using Event elegation
 
 const buttonsParents = document.querySelector(".buttonsParents");
 buttonsParents.addEventListener("click", (event) => {
   const categoryKeyword = event.target.childNodes[0].textContent.toLowerCase();
+  changeClass(categoryKeyword);
   allNodes.forEach((item) => {
     if (categoryKeyword === "all") {
       item.style.display = "block";
